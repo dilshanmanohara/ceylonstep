@@ -1,0 +1,53 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #18181b;
+  color: #f3f4f6;
+  font-family: Arial, Helvetica, sans-serif;
+  background-image: url('/wallpaper.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.card-theme {
+  background: #23272F;
+  color: #f3f4f6;
+}
+
+.btn-yellow {
+  background: #FFD600;
+  color: #18181b;
+  font-weight: bold;
+  transition: background 0.2s;
+}
+.btn-yellow:hover {
+  background: #e6be00;
+}
+.text-yellow {
+  color: #FFD600;
+}
