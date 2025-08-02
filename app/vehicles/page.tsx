@@ -297,7 +297,7 @@ export default function VehiclesPage() {
                             mobile_number: regForm.mobile_number,
                             role: "tourist",
                           },
-                        ], { onConflict: ["email"] })
+                        ])
                         .select();
                       if (userError || !userData || userData.length === 0) {
                         setFormError(userError?.message || "Failed to register user.");
@@ -447,15 +447,15 @@ export default function VehiclesPage() {
                           // 1. Upsert user
                           const { data: userData, error: userError } = await supabase
                             .from("users")
-                            .upsert([
-                              {
-                                email: regForm.email,
-                                name: regForm.name,
-                                mobile_number: regForm.mobile_number,
-                                role: "tourist",
-                              },
-                            ], { onConflict: ["email"] })
-                            .select();
+                        .upsert([
+                          {
+                            email: regForm.email,
+                            name: regForm.name,
+                            mobile_number: regForm.mobile_number,
+                            role: "tourist",
+                          },
+                        ], { onConflict: "email" })
+                        .select();
                           if (userError || !userData || userData.length === 0) {
                             setFormError(userError?.message || "Failed to register user.");
                             setFormLoading(false);
