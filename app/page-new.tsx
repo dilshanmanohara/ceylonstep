@@ -4,7 +4,9 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { useEffect, useState } from "react";
 import { supabase } from "../lib/supabaseClient";
+
 import Link from "next/link";
+import SimpleGoogleReviews from "./components/SimpleGoogleReviews";
 
 
 export default function Home() {
@@ -346,10 +348,7 @@ export default function Home() {
         <p className="text-lg text-gray-600 mb-12 text-center max-w-2xl">See what our customers say about their experiences with CeylonStep. Join thousands of satisfied travelers!</p>
         
         {/* Google Reviews Component */}
-        <GoogleReviews 
-          placeId="YOUR_GOOGLE_PLACE_ID" 
-          apiKey="YOUR_GOOGLE_PLACES_API_KEY" 
-        />
+        <SimpleGoogleReviews />
       </section>
 
       {/* Contact Section */}

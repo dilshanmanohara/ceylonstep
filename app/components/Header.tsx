@@ -4,13 +4,11 @@ import { useState } from "react";
 export default function Header() {
   const [drawerOpen, setDrawerOpen] = useState(false);
   return (
-    <header className="w-full bg-white/30 backdrop-blur-md text-gray-900 flex items-center justify-between px-4 sm:px-8 py-3 shadow-lg fixed top-0 left-0 z-50 border-b border-white/20 min-h-[4.5rem]">
+    <header className="w-full bg-white/30 backdrop-blur-md text-gray-900 flex items-center justify-between px-8 py-3 shadow-lg fixed top-0 left-0 z-50 border-b border-white/20">
       {/* Logo space */}
-      <div className="relative flex items-center gap-3 max-w-[90vw]">
-        <div className="absolute left-0 top-full translate-y-[-40%]">
-          <img src="/logo.png" alt="CeylonStep Logo" className="h-32 w-32 object-cover rounded-full border-4 border-yellow-400 shadow-2xl z-50" />
-        </div>
-        <span className="ml-36 text-2xl font-extrabold tracking-tight drop-shadow-sm">CeylonStep</span>
+      <div className="flex items-center gap-3">
+        <img src="/logo.png" alt="CeylonStep Logo" className="h-12 w-12 object-cover rounded-full border-2 border-white shadow" />
+        <span className="text-2xl font-extrabold tracking-tight drop-shadow-sm">CeylonStep</span>
       </div>
       {/* Navigation - desktop */}
       <nav className="hidden md:block">
@@ -26,7 +24,7 @@ export default function Header() {
       </nav>
       {/* Hamburger menu for mobile */}
       <button
-        className="md:hidden flex flex-col gap-1.5 items-center justify-center p-2 min-w-10 min-h-10 rounded hover:bg-white/40 transition"
+        className="md:hidden flex flex-col gap-1.5 items-center justify-center p-2 rounded hover:bg-white/40 transition"
         onClick={() => setDrawerOpen(true)}
         aria-label="Open navigation menu"
       >
