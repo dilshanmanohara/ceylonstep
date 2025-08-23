@@ -62,7 +62,7 @@ export default function Home() {
     <>
       <div className="flex flex-col items-center justify-center min-h-screen w-full">
       {/* Hero Carousel Section */}
-      <div className="mt-[100px] w-full max-w-4xl h-[400px] mx-auto px-4 relative">
+      <div className="mt-0 w-full max-w-4xl h-[400px] mx-auto px-4 relative">
         {/* Professional Carousel Container */}
         <div className="relative overflow-hidden rounded-3xl shadow-2xl border-2 border-white/20 h-full">
           <Slider {...sliderSettings}>

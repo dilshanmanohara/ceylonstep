@@ -34,7 +34,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased overflow-x-hidden`}
       >
         <Header />
-        <div className="pt-28 md:pt-24">
+        <div className="pt-4 md:pt-2">
         {children}
         </div>
         <Footer />
