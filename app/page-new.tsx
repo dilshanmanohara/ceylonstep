@@ -57,18 +57,22 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen w-full">
+    <>
+      <head>
+        <title>CeylonStep</title>
+      </head>
+      <div className="flex flex-col items-center justify-center min-h-screen w-full">
       {/* Hero Carousel Section */}
-      <div className="mt-[100px] w-full max-w-6xl mx-auto px-4 relative">
+      <div className="mt-[100px] w-full max-w-4xl h-[400px] mx-auto px-4 relative">
         {/* Professional Carousel Container */}
-        <div className="relative overflow-hidden rounded-3xl shadow-2xl border-2 border-white/20">
+        <div className="relative overflow-hidden rounded-3xl shadow-2xl border-2 border-white/20 h-full">
           <Slider {...sliderSettings}>
             {albumImages.map((img, idx) => (
               <div key={idx} className="relative">
                 <img
                   src={img.image_url}
                   alt={img.caption || `Slide ${idx + 1}`}
-                  className="w-full h-[500px] object-cover"
+                  className="w-full h-[400px] object-cover"
                 />
                 {/* Professional Overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
@@ -481,5 +485,6 @@ export default function Home() {
         </div>
       </section>
     </div>
+    </>
   );
 } 
