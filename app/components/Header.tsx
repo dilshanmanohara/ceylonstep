@@ -34,16 +34,29 @@ export default function Header() {
           </ul>
         </nav>
       </div>
-      {/* Hamburger menu for mobile with animation */}
-        <button
-          className={`md:hidden flex flex-col gap-1.5 items-center justify-center p-2 rounded hover:bg-yellow-400/10 transition relative z-50 ${drawerOpen ? 'open' : ''}`}
-          onClick={() => setDrawerOpen(!drawerOpen)}
-          aria-label={drawerOpen ? "Close navigation menu" : "Open navigation menu"}
-        >
-          <span className={`block w-7 h-0.5 bg-yellow-400 transition-all duration-300 ${drawerOpen ? 'rotate-45 translate-y-2' : ''}`}></span>
-          <span className={`block w-7 h-0.5 bg-yellow-400 transition-all duration-300 ${drawerOpen ? 'opacity-0' : ''}`}></span>
-          <span className={`block w-7 h-0.5 bg-yellow-400 transition-all duration-300 ${drawerOpen ? '-rotate-45 -translate-y-2' : ''}`}></span>
-        </button>
+      {/* Hamburger or Back Arrow for mobile */}
+        {drawerOpen ? (
+          <button
+            className="md:hidden flex items-center justify-center p-2 rounded hover:bg-yellow-400/10 transition relative z-50"
+            onClick={() => setDrawerOpen(false)}
+            aria-label="Close navigation menu"
+          >
+            {/* Back Arrow Icon */}
+            <svg className="w-7 h-7 text-yellow-400" fill="none" stroke="currentColor" strokeWidth="3" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
+            </svg>
+          </button>
+        ) : (
+          <button
+            className="md:hidden flex flex-col gap-1.5 items-center justify-center p-2 rounded hover:bg-yellow-400/10 transition relative z-50"
+            onClick={() => setDrawerOpen(true)}
+            aria-label="Open navigation menu"
+          >
+            <span className="block w-7 h-0.5 bg-yellow-400 transition-all duration-300"></span>
+            <span className="block w-7 h-0.5 bg-yellow-400 transition-all duration-300"></span>
+            <span className="block w-7 h-0.5 bg-yellow-400 transition-all duration-300"></span>
+          </button>
+        )}
       {/* Mobile Drawer */}
       {drawerOpen && (
         <>
