@@ -5,34 +5,45 @@ import { useState } from "react";
 export default function Header() {
   const [drawerOpen, setDrawerOpen] = useState(false);
   return (
-    <header className="w-full bg-white/30 backdrop-blur-md text-gray-900 flex items-center justify-between px-8 py-3 shadow-lg fixed top-0 left-0 z-50 border-b border-white/20">
-      {/* Logo space */}
-      <div className="flex items-center gap-3">
-        <img src="/logo.png" alt="CeylonStep Logo" className="h-12 w-12 object-cover rounded-full border-2 border-white shadow" />
-        <span className="text-2xl font-extrabold tracking-tight drop-shadow-sm">CeylonStep</span>
+    <header className="w-full bg-gray-900/95 backdrop-blur-md text-white flex items-center justify-between px-8 py-3 shadow-lg fixed top-0 left-0 z-50 border-b-2 border-yellow-400/50 relative overflow-hidden">
+      {/* Subtle yellow dot SVG pattern background */}
+      <div aria-hidden="true" className="absolute inset-0 z-0 opacity-15 pointer-events-none select-none">
+        <div className="absolute inset-0" style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23FFD600' fill-opacity='0.25'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+          backgroundSize: '60px 60px',
+        }} />
       </div>
+      {/* Soft yellow glow */}
+      <div aria-hidden="true" className="absolute left-1/2 top-0 -translate-x-1/2 z-0" style={{width: '40vw', height: '100%', filter: 'blur(32px)', background: 'radial-gradient(circle, rgba(255,214,0,0.10) 0%, rgba(255,214,0,0.0) 80%)'}} />
+      <div className="relative z-10 w-full flex items-center justify-between">
+      {/* Logo space */}
+        <div className="flex items-center gap-3">
+          <img src="/logo.png" alt="CeylonStep Logo" className="h-12 w-12 object-cover rounded-full border-2 border-yellow-400 shadow-lg" />
+          <span className="text-2xl font-extrabold tracking-tight text-yellow-400 drop-shadow-sm">CeylonStep</span>
+        </div>
       {/* Navigation - desktop */}
-      <nav className="hidden md:block">
-        <ul className="flex gap-10 text-lg font-semibold">
-          <li><a href="/" className="relative after:block after:h-0.5 after:bg-yellow-400 after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300 after:origin-left">Home</a></li>
-          <li><a href="/#about" className="relative after:block after:h-0.5 after:bg-yellow-400 after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300 after:origin-left">About</a></li>
-          <li><a href="/vehicles" className="relative after:block after:h-0.5 after:bg-yellow-400 after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300 after:origin-left">Vehicles</a></li>
-          <li><a href="/#services" className="relative after:block after:h-0.5 after:bg-yellow-400 after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300 after:origin-left">Services</a></li>
-          <li><a href="/#gallery" className="relative after:block after:h-0.5 after:bg-yellow-400 after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300 after:origin-left">Gallery</a></li>
-          <li><a href="/#reviews" className="relative after:block after:h-0.5 after:bg-yellow-400 after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300 after:origin-left">Reviews</a></li>
-          <li><a href="/#contact" className="relative after:block after:h-0.5 after:bg-yellow-400 after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300 after:origin-left">Contact</a></li>
-        </ul>
-      </nav>
+        <nav className="hidden md:block">
+          <ul className="flex gap-10 text-lg font-semibold">
+            <li><a href="/" className="relative text-gray-200 hover:text-yellow-400 after:block after:h-0.5 after:bg-yellow-400 after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300 after:origin-left">Home</a></li>
+            <li><a href="/#about" className="relative text-gray-200 hover:text-yellow-400 after:block after:h-0.5 after:bg-yellow-400 after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300 after:origin-left">About</a></li>
+            <li><a href="/vehicles" className="relative text-gray-200 hover:text-yellow-400 after:block after:h-0.5 after:bg-yellow-400 after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300 after:origin-left">Vehicles</a></li>
+            <li><a href="/#services" className="relative text-gray-200 hover:text-yellow-400 after:block after:h-0.5 after:bg-yellow-400 after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300 after:origin-left">Services</a></li>
+            <li><a href="/#gallery" className="relative text-gray-200 hover:text-yellow-400 after:block after:h-0.5 after:bg-yellow-400 after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300 after:origin-left">Gallery</a></li>
+            <li><a href="/#reviews" className="relative text-gray-200 hover:text-yellow-400 after:block after:h-0.5 after:bg-yellow-400 after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300 after:origin-left">Reviews</a></li>
+            <li><a href="/#contact" className="relative text-gray-200 hover:text-yellow-400 after:block after:h-0.5 after:bg-yellow-400 after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300 after:origin-left">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
       {/* Hamburger menu for mobile with animation */}
-      <button
-        className={`md:hidden flex flex-col gap-1.5 items-center justify-center p-2 rounded hover:bg-white/40 transition relative z-50 ${drawerOpen ? 'open' : ''}`}
-        onClick={() => setDrawerOpen(!drawerOpen)}
-        aria-label={drawerOpen ? "Close navigation menu" : "Open navigation menu"}
-      >
-        <span className={`block w-7 h-0.5 bg-gray-900 transition-all duration-300 ${drawerOpen ? 'rotate-45 translate-y-2' : ''}`}></span>
-        <span className={`block w-7 h-0.5 bg-gray-900 transition-all duration-300 ${drawerOpen ? 'opacity-0' : ''}`}></span>
-        <span className={`block w-7 h-0.5 bg-gray-900 transition-all duration-300 ${drawerOpen ? '-rotate-45 -translate-y-2' : ''}`}></span>
-      </button>
+        <button
+          className={`md:hidden flex flex-col gap-1.5 items-center justify-center p-2 rounded hover:bg-yellow-400/10 transition relative z-50 ${drawerOpen ? 'open' : ''}`}
+          onClick={() => setDrawerOpen(!drawerOpen)}
+          aria-label={drawerOpen ? "Close navigation menu" : "Open navigation menu"}
+        >
+          <span className={`block w-7 h-0.5 bg-yellow-400 transition-all duration-300 ${drawerOpen ? 'rotate-45 translate-y-2' : ''}`}></span>
+          <span className={`block w-7 h-0.5 bg-yellow-400 transition-all duration-300 ${drawerOpen ? 'opacity-0' : ''}`}></span>
+          <span className={`block w-7 h-0.5 bg-yellow-400 transition-all duration-300 ${drawerOpen ? '-rotate-45 -translate-y-2' : ''}`}></span>
+        </button>
       {/* Mobile Drawer */}
       {drawerOpen && (
         <>
@@ -41,21 +52,30 @@ export default function Header() {
             onClick={() => setDrawerOpen(false)}
             aria-label="Close navigation menu overlay"
           />
-          <nav className="fixed top-2 right-2 h-[96vh] w-72 bg-white/80 backdrop-blur-2xl shadow-2xl rounded-2xl z-50 flex flex-col p-8 gap-8 animate-slide-in border border-yellow-100/40" style={{background: 'linear-gradient(135deg, #fffbe6 0%, #fff 60%, #fffbe6 100%)'}}>
-            <div className="flex flex-col items-center gap-4 mb-6">
-              <img src="/logo.png" alt="CeylonStep Logo" className="h-14 w-14 object-cover rounded-full border-2 border-yellow-400 shadow" />
-              <span className="text-xl font-extrabold tracking-tight text-yellow-500">CeylonStep</span>
+          <nav className="fixed top-2 right-2 h-[96vh] w-72 bg-gray-900/95 backdrop-blur-2xl shadow-2xl rounded-2xl z-50 flex flex-col p-8 gap-8 animate-slide-in border border-yellow-400/30 relative overflow-hidden" style={{background: 'linear-gradient(135deg, #23272F 0%, #18181b 100%)'}}>
+            {/* Subtle yellow dot SVG pattern background */}
+            <div aria-hidden="true" className="absolute inset-0 z-0 opacity-15 pointer-events-none select-none">
+              <div className="absolute inset-0" style={{
+                backgroundImage: `url(\"data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23FFD600' fill-opacity='0.25'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E\")`,
+                backgroundSize: '60px 60px',
+              }} />
             </div>
-            <ul className="flex flex-col gap-6 text-lg font-semibold text-gray-900">
-              <li><a href="/" onClick={() => setDrawerOpen(false)} className="hover:text-yellow-500 transition">Home</a></li>
-              <li><a href="/#about" onClick={() => setDrawerOpen(false)} className="hover:text-yellow-500 transition">About</a></li>
-              <li><a href="/vehicles" onClick={() => setDrawerOpen(false)} className="hover:text-yellow-500 transition">Vehicles</a></li>
-              <li><a href="/#services" onClick={() => setDrawerOpen(false)} className="hover:text-yellow-500 transition">Services</a></li>
-              <li><a href="/#gallery" onClick={() => setDrawerOpen(false)} className="hover:text-yellow-500 transition">Gallery</a></li>
-              <li><a href="/#reviews" onClick={() => setDrawerOpen(false)} className="hover:text-yellow-500 transition">Reviews</a></li>
-              <li><a href="/#contact" onClick={() => setDrawerOpen(false)} className="hover:text-yellow-500 transition">Contact</a></li>
+            {/* Soft yellow glow */}
+            <div aria-hidden="true" className="absolute left-1/2 top-0 -translate-x-1/2 z-0" style={{width: '40vw', height: '100%', filter: 'blur(32px)', background: 'radial-gradient(circle, rgba(255,214,0,0.10) 0%, rgba(255,214,0,0.0) 80%)'}} />
+            <div className="relative z-10 flex flex-col items-center gap-4 mb-6">
+              <img src="/logo.png" alt="CeylonStep Logo" className="h-14 w-14 object-cover rounded-full border-2 border-yellow-400 shadow-lg" />
+              <span className="text-xl font-extrabold tracking-tight text-yellow-400">CeylonStep</span>
+            </div>
+            <ul className="relative z-10 flex flex-col gap-6 text-lg font-semibold text-gray-200">
+              <li><a href="/" onClick={() => setDrawerOpen(false)} className="hover:text-yellow-400 transition">Home</a></li>
+              <li><a href="/#about" onClick={() => setDrawerOpen(false)} className="hover:text-yellow-400 transition">About</a></li>
+              <li><a href="/vehicles" onClick={() => setDrawerOpen(false)} className="hover:text-yellow-400 transition">Vehicles</a></li>
+              <li><a href="/#services" onClick={() => setDrawerOpen(false)} className="hover:text-yellow-400 transition">Services</a></li>
+              <li><a href="/#gallery" onClick={() => setDrawerOpen(false)} className="hover:text-yellow-400 transition">Gallery</a></li>
+              <li><a href="/#reviews" onClick={() => setDrawerOpen(false)} className="hover:text-yellow-400 transition">Reviews</a></li>
+              <li><a href="/#contact" onClick={() => setDrawerOpen(false)} className="hover:text-yellow-400 transition">Contact</a></li>
             </ul>
-            <div className="flex justify-center gap-4 mt-auto">
+            <div className="relative z-10 flex justify-center gap-4 mt-auto">
               <a href="#" className="w-9 h-9 bg-yellow-400 text-gray-900 rounded-full flex items-center justify-center hover:bg-yellow-300 transition-colors duration-300 shadow-lg" aria-label="Facebook">
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M22.675 0h-21.35C.595 0 0 .592 0 1.326v21.348C0 23.408.595 24 1.325 24h11.495v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.797.143v3.24l-1.918.001c-1.504 0-1.797.715-1.797 1.763v2.313h3.587l-.467 3.622h-3.12V24h6.116C23.406 24 24 23.408 24 22.674V1.326C24 .592 23.406 0 22.675 0"/></svg>
               </a>
