@@ -5,6 +5,8 @@ import "slick-carousel/slick/slick-theme.css";
 import { useEffect, useState } from "react";
 import { supabase } from "../lib/supabaseClient";
 
+
+import Head from "next/head";
 import Link from "next/link";
 import SimpleGoogleReviews from "./components/SimpleGoogleReviews";
 
@@ -58,9 +60,6 @@ export default function Home() {
 
   return (
     <>
-      <head>
-        <title>CeylonStep</title>
-      </head>
       <div className="flex flex-col items-center justify-center min-h-screen w-full">
       {/* Hero Carousel Section */}
       <div className="mt-[100px] w-full max-w-4xl h-[400px] mx-auto px-4 relative">
