@@ -132,7 +132,7 @@ export default function Home() {
       {/* About Section */}
       <section
         id="about"
-        className="mt-[200px] w-full max-w-6xl mx-auto px-4 scroll-mt-[200px]"
+        className="mt-[100px] w-full max-w-6xl mx-auto px-4 scroll-mt-[200px]"
       >
         <div className="bg-white/10 backdrop-blur-lg rounded-3xl p-12 border border-white/20 shadow-2xl">
           <div className="text-center mb-12">
