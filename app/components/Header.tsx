@@ -34,29 +34,18 @@ export default function Header() {
           </ul>
         </nav>
       </div>
-      {/* Hamburger or Back Arrow for mobile */}
-        {drawerOpen ? (
-          <button
-            className="md:hidden flex items-center justify-center p-2 rounded hover:bg-yellow-400/10 transition relative z-50"
-            onClick={() => setDrawerOpen(false)}
-            aria-label="Close navigation menu"
-          >
-            {/* Back Arrow Icon */}
-            <svg className="w-7 h-7 text-yellow-400" fill="none" stroke="currentColor" strokeWidth="3" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
-            </svg>
-          </button>
-        ) : (
-          <button
-            className="md:hidden flex flex-col gap-1.5 items-center justify-center p-2 rounded hover:bg-yellow-400/10 transition relative z-50"
-            onClick={() => setDrawerOpen(true)}
-            aria-label="Open navigation menu"
-          >
-            <span className="block w-7 h-0.5 bg-yellow-400 transition-all duration-300"></span>
-            <span className="block w-7 h-0.5 bg-yellow-400 transition-all duration-300"></span>
-            <span className="block w-7 h-0.5 bg-yellow-400 transition-all duration-300"></span>
-          </button>
-        )}
+      {/* Hamburger menu for mobile with animation, replaced by back arrow when open */}
+      {!drawerOpen ? (
+        <button
+          className="md:hidden flex flex-col gap-1.5 items-center justify-center p-2 rounded hover:bg-yellow-400/10 transition relative z-50"
+          onClick={() => setDrawerOpen(true)}
+          aria-label="Open navigation menu"
+        >
+          <span className="block w-7 h-0.5 bg-yellow-400 transition-all duration-300"></span>
+          <span className="block w-7 h-0.5 bg-yellow-400 transition-all duration-300"></span>
+          <span className="block w-7 h-0.5 bg-yellow-400 transition-all duration-300"></span>
+        </button>
+      ) : null}
       {/* Mobile Drawer */}
       {drawerOpen && (
         <>
@@ -66,6 +55,17 @@ export default function Header() {
             aria-label="Close navigation menu overlay"
           />
           <nav className="fixed top-2 right-2 h-[96vh] w-72 bg-gray-900/95 backdrop-blur-2xl shadow-2xl rounded-2xl z-50 flex flex-col p-8 gap-8 animate-slide-in border border-yellow-400/30 relative overflow-hidden" style={{background: 'linear-gradient(135deg, #23272F 0%, #18181b 100%)'}}>
+            {/* Back Arrow for closing drawer */}
+            <button
+              className="absolute top-4 left-4 z-50 flex items-center gap-2 text-yellow-400 hover:text-yellow-300 text-2xl font-bold focus:outline-none"
+              onClick={() => setDrawerOpen(false)}
+              aria-label="Close navigation menu"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-7 h-7">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+              </svg>
+              Back
+            </button>
             {/* Subtle yellow dot SVG pattern background */}
             <div aria-hidden="true" className="absolute inset-0 z-0 opacity-15 pointer-events-none select-none">
               <div className="absolute inset-0" style={{
@@ -75,7 +75,7 @@ export default function Header() {
             </div>
             {/* Soft yellow glow */}
             <div aria-hidden="true" className="absolute left-1/2 top-0 -translate-x-1/2 z-0" style={{width: '40vw', height: '100%', filter: 'blur(32px)', background: 'radial-gradient(circle, rgba(255,214,0,0.10) 0%, rgba(255,214,0,0.0) 80%)'}} />
-            <div className="relative z-10 flex flex-col items-center gap-4 mb-6">
+            <div className="relative z-10 flex flex-col items-center gap-4 mb-6 mt-8">
               <img src="/logo.png" alt="CeylonStep Logo" className="h-14 w-14 object-cover rounded-full border-2 border-yellow-400 shadow-lg" />
               <span className="text-xl font-extrabold tracking-tight text-yellow-400">CeylonStep</span>
             </div>
@@ -108,10 +108,6 @@ export default function Header() {
             .animate-slide-in {
               animation: slide-in 0.3s cubic-bezier(0.4,0,0.2,1);
             }
-            /* Hamburger animation */
-            .open span:nth-child(1) { transform: rotate(45deg) translateY(8px); }
-            .open span:nth-child(2) { opacity: 0; }
-            .open span:nth-child(3) { transform: rotate(-45deg) translateY(-8px); }
           `}</style>
         </>
       )}

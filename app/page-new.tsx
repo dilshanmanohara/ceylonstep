@@ -62,7 +62,7 @@ export default function Home() {
     <>
       <div className="flex flex-col items-center justify-center min-h-screen w-full">
       {/* Hero Carousel Section */}
-      <div className="mt-0 w-full max-w-4xl h-[400px] mx-auto px-4 relative">
+      <div className="-mt-[50px] w-full max-w-4xl h-[400px] mx-auto px-4 relative">
         {/* Professional Carousel Container */}
         <div className="relative overflow-hidden rounded-3xl shadow-2xl border-2 border-white/20 h-full">
           <Slider {...sliderSettings}>
@@ -108,7 +108,7 @@ export default function Home() {
       </div>
 
       {/* Book Now Button */}
-      <div className="mt-8 text-center">
+      <div className="mt-16 text-center">
         <Link
           href="/vehicles"
           className="inline-flex items-center gap-3 bg-gradient-to-r from-yellow-400 to-yellow-300 text-black px-8 py-4 rounded-full text-xl font-bold shadow-2xl hover:scale-105 transition-all duration-300 hover:shadow-yellow-400/50"
@@ -123,11 +123,11 @@ export default function Home() {
       {/* About Section */}
       <section
         id="about"
-        className="mt-16 w-full max-w-6xl mx-auto px-4 scroll-mt-16"
+        className="mt-[200px] w-full max-w-6xl mx-auto px-4 scroll-mt-[200px]"
       >
         <div className="bg-white/10 backdrop-blur-lg rounded-3xl p-12 border border-white/20 shadow-2xl">
-          <div className="text-center mb-6">
-            <h2 className="text-4xl md:text-5xl font-black text-white mb-4 tracking-tight drop-shadow-2xl">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl md:text-5xl font-black text-white mb-6 tracking-tight drop-shadow-2xl">
               About CeylonStep
             </h2>
             <div className="w-24 h-1 bg-yellow-400 mx-auto rounded-full"></div>
@@ -135,7 +135,7 @@ export default function Home() {
           
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
-              <h3 className="text-2xl font-bold text-yellow-400 mb-2">
+              <h3 className="text-2xl font-bold text-yellow-400 mb-4">
                 Discover Sri Lanka with Premier Vehicle Rentals
               </h3>
               <p className="text-gray-200 leading-relaxed text-lg">
@@ -148,7 +148,7 @@ export default function Home() {
                 roadside assistance. Our commitment is to deliver an unparalleled travel experience, helping you 
                 explore Sri Lanka's vibrant culture and picturesque views comfortably and reliably.
               </p>
-              <div className="flex gap-2 pt-2">
+              <div className="flex gap-4 pt-4">
                 <div className="text-center">
                   <div className="text-3xl font-bold text-yellow-400">500+</div>
                   <div className="text-gray-300 text-sm">Happy Customers</div>
@@ -166,7 +166,7 @@ export default function Home() {
             
             <div className="relative">
               <div className="bg-gradient-to-br from-yellow-400/20 to-yellow-600/20 rounded-2xl p-8 border border-yellow-400/30">
-              <h4 className="text-xl font-bold text-yellow-400 mb-2">Why Choose CeylonStep?</h4>
+                <h4 className="text-xl font-bold text-yellow-400 mb-4">Why Choose CeylonStep?</h4>
                 <ul className="space-y-3 text-gray-200">
                   <li className="flex items-center gap-3">
                     <span className="text-yellow-400">✓</span>
@@ -198,10 +198,10 @@ export default function Home() {
       {/* Services Section */}
       <section
         id="services"
-        className="mt-12 w-full max-w-6xl mx-auto px-4 scroll-mt-12"
+        className="mt-[100px] w-full max-w-6xl mx-auto px-4 scroll-mt-[200px]"
       >
-        <div className="text-center mb-8">
-          <h2 className="text-4xl md:text-5xl font-black text-white mb-4 tracking-tight drop-shadow-2xl">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-black text-white mb-6 tracking-tight drop-shadow-2xl">
             Our Services
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
@@ -212,9 +212,9 @@ export default function Home() {
         <div className="grid md:grid-cols-3 gap-8">
           {/* Car Rentals */}
           <div className="bg-white/10 backdrop-blur-lg rounded-3xl p-8 border border-white/20 shadow-2xl hover:scale-105 transition-transform duration-300 group">
-            <div className="text-6xl mb-4">🚗</div>
-            <h3 className="text-2xl font-bold text-yellow-400 mb-2">Car Rentals</h3>
-            <p className="text-gray-200 leading-relaxed mb-4">
+            <div className="text-6xl mb-6">🚗</div>
+            <h3 className="text-2xl font-bold text-yellow-400 mb-4">Car Rentals</h3>
+            <p className="text-gray-200 leading-relaxed mb-6">
               Comfortable and reliable cars for family trips, business travel, or solo adventures. 
               All vehicles come with comprehensive insurance and GPS navigation.
             </p>
@@ -228,9 +228,9 @@ export default function Home() {
 
           {/* Bike Rentals */}
           <div className="bg-white/10 backdrop-blur-lg rounded-3xl p-8 border border-white/20 shadow-2xl hover:scale-105 transition-transform duration-300 group">
-            <div className="text-6xl mb-4">🏍️</div>
-            <h3 className="text-2xl font-bold text-yellow-400 mb-2">Bike Rentals</h3>
-            <p className="text-gray-200 leading-relaxed mb-4">
+            <div className="text-6xl mb-6">🏍️</div>
+            <h3 className="text-2xl font-bold text-yellow-400 mb-4">Bike Rentals</h3>
+            <p className="text-gray-200 leading-relaxed mb-6">
               Perfect for adventurous souls who want to feel the wind in their hair. 
               Our bikes are perfect for exploring Sri Lanka's scenic routes and hidden gems.
             </p>
@@ -244,9 +244,9 @@ export default function Home() {
 
           {/* Additional Services */}
           <div className="bg-white/10 backdrop-blur-lg rounded-3xl p-8 border border-white/20 shadow-2xl hover:scale-105 transition-transform duration-300 group">
-            <div className="text-6xl mb-4">🛠️</div>
-            <h3 className="text-2xl font-bold text-yellow-400 mb-2">Additional Services</h3>
-            <p className="text-gray-200 leading-relaxed mb-4">
+            <div className="text-6xl mb-6">🛠️</div>
+            <h3 className="text-2xl font-bold text-yellow-400 mb-4">Additional Services</h3>
+            <p className="text-gray-200 leading-relaxed mb-6">
               We go beyond just vehicle rental. Our comprehensive services ensure your journey 
               is smooth, safe, and memorable from start to finish.
             </p>
@@ -260,9 +260,9 @@ export default function Home() {
         </div>
 
         {/* License Information */}
-        <div className="mt-8 bg-gradient-to-r from-yellow-400/20 to-yellow-600/20 rounded-3xl p-6 border border-yellow-400/30">
+        <div className="mt-16 bg-gradient-to-r from-yellow-400/20 to-yellow-600/20 rounded-3xl p-8 border border-yellow-400/30">
           <div className="text-center">
-            <h3 className="text-2xl font-bold text-yellow-400 mb-2">Driving License Information</h3>
+            <h3 className="text-2xl font-bold text-yellow-400 mb-4">Driving License Information</h3>
             <p className="text-gray-200 leading-relaxed max-w-2xl mx-auto">
               International visitors can drive in Sri Lanka with their home country's driving license 
               for up to 3 months. For longer stays, you may need to obtain a local temporary license. 
@@ -275,10 +275,10 @@ export default function Home() {
       {/* Gallery Section */}
       <section
         id="gallery"
-        className="mt-12 w-full max-w-6xl mx-auto px-4 scroll-mt-12"
+        className="mt-[300px] w-full max-w-6xl mx-auto px-4 scroll-mt-[200px]"
       >
-        <div className="text-center mb-8">
-          <h2 className="text-4xl md:text-5xl font-black text-white mb-4 tracking-tight drop-shadow-2xl">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-black text-white mb-6 tracking-tight drop-shadow-2xl">
             Gallery
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
@@ -303,7 +303,7 @@ export default function Home() {
               />
               <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                 <div className="text-white text-center">
-                <div className="text-2xl mb-1">🔍</div>
+                  <div className="text-2xl mb-2">🔍</div>
                   <div className="text-sm font-semibold">Click to view</div>
                 </div>
               </div>
@@ -330,7 +330,7 @@ export default function Home() {
                 className="max-w-full max-h-full object-contain rounded-lg"
               />
               {galleryImages[lightboxIndex]?.caption && (
-                <div className="text-white text-center mt-2 text-lg">
+                <div className="text-white text-center mt-4 text-lg">
                   {galleryImages[lightboxIndex].caption}
                 </div>
               )}
@@ -345,10 +345,10 @@ export default function Home() {
       {/* Customer Reviews Section - Google Reviews */}
       <section
         id="reviews"
-        className="relative w-full flex flex-col items-center py-16 bg-gradient-to-br from-yellow-100 via-yellow-200 to-yellow-50 overflow-x-hidden"
+        className="relative w-full flex flex-col items-center py-32 bg-gradient-to-br from-yellow-100 via-yellow-200 to-yellow-50 overflow-x-hidden"
       >
-        <h2 className="text-4xl font-black text-gray-900 mb-1 tracking-tight drop-shadow-lg">What Our Customers Say</h2>
-        <p className="text-lg text-gray-600 mb-6 text-center max-w-2xl">See what our customers say about their experiences with CeylonStep. Join thousands of satisfied travelers!</p>
+        <h2 className="text-4xl font-black text-gray-900 mb-2 tracking-tight drop-shadow-lg">What Our Customers Say</h2>
+        <p className="text-lg text-gray-600 mb-12 text-center max-w-2xl">See what our customers say about their experiences with CeylonStep. Join thousands of satisfied travelers!</p>
         
         {/* Google Reviews Component */}
         <SimpleGoogleReviews />
@@ -357,10 +357,10 @@ export default function Home() {
       {/* Contact Section */}
       <section
         id="contact"
-        className="w-full max-w-6xl mx-auto px-4 py-12 scroll-mt-12"
+        className="w-full max-w-6xl mx-auto px-4 py-32 scroll-mt-[200px]"
       >
-        <div className="text-center mb-8">
-          <h2 className="text-4xl md:text-5xl font-black text-white mb-4 tracking-tight drop-shadow-2xl">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-black text-white mb-6 tracking-tight drop-shadow-2xl">
             Contact Us
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
@@ -371,7 +371,7 @@ export default function Home() {
         <div className="grid md:grid-cols-2 gap-12">
           {/* Contact Form */}
           <div className="bg-white/10 backdrop-blur-lg rounded-3xl p-8 border border-white/20 shadow-2xl">
-            <h3 className="text-2xl font-bold text-yellow-400 mb-2">Send us a Message</h3>
+            <h3 className="text-2xl font-bold text-yellow-400 mb-6">Send us a Message</h3>
             <form className="space-y-6">
               <div className="grid md:grid-cols-2 gap-4">
                 <div className="relative">

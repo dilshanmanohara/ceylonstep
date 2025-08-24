@@ -148,7 +148,7 @@ export default function TouristDashboard() {
   return (
     <div className="p-8 max-w-6xl mx-auto">
       {/* Sliding Photo Album */}
-      <Slider {...sliderSettings} className="mb-4">
+      <Slider {...sliderSettings} className="mb-8">
         {albumImages.map((img, idx) => (
           <div key={idx}>
             <img
@@ -162,9 +162,9 @@ export default function TouristDashboard() {
           </div>
         ))}
       </Slider>
-      <h1 className="text-2xl font-bold mb-2">Browse Vehicles</h1>
+      <h1 className="text-2xl font-bold mb-4">Browse Vehicles</h1>
       {/* Filters */}
-      <div className="flex flex-wrap gap-2 mb-4">
+      <div className="flex flex-wrap gap-4 mb-6">
         <select className="border rounded px-3 py-2" value={typeFilter} onChange={e => setTypeFilter(e.target.value)}>
           <option value="">All Types</option>
           <option value="car">Car</option>
@@ -189,10 +189,10 @@ export default function TouristDashboard() {
               <h2 className="text-xl font-semibold text-yellow">{v.title}</h2>
               <p className="capitalize text-gray-300">{v.type}</p>
               <p className="text-gray-200">{v.description}</p>
-              <p className="font-bold mt-1 text-yellow">${v.price_per_day} / day</p>
+              <p className="font-bold mt-2 text-yellow">${v.price_per_day} / day</p>
               <p className="text-sm text-gray-400">{v.location}</p>
               {/* Booking Form */}
-              <div className="mt-1 flex flex-col gap-1">
+              <div className="mt-2 flex flex-col gap-2">
                 <label className="text-sm">Book this vehicle:</label>
                 <div className="flex gap-2">
                   <input type="date" className="border rounded px-2 py-1" min={today()} value={bookingState[v.id]?.start || ""} onChange={e => setBookingState(s => ({ ...s, [v.id]: { ...s[v.id], start: e.target.value } }))} />

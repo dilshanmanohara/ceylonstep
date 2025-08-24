@@ -71,7 +71,7 @@ export default function Home() {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen w-full">
       {/* Hero Carousel Section */}
-      <div className="mt-[100px] w-full max-w-6xl mx-auto px-4 relative">
+      <div className="mt-[50px] -mt-[50px] w-full max-w-6xl mx-auto px-4 relative">
         {/* Professional Carousel Container */}
         <div className="relative overflow-hidden rounded-3xl shadow-2xl border-2 border-white/20">
           <Slider {...sliderSettings}>
@@ -132,7 +132,7 @@ export default function Home() {
       {/* About Section */}
       <section
         id="about"
-        className="mt-[400px] w-full max-w-6xl mx-auto px-4 scroll-mt-[200px]"
+        className="mt-[200px] w-full max-w-6xl mx-auto px-4 scroll-mt-[200px]"
       >
         <div className="bg-white/10 backdrop-blur-lg rounded-3xl p-12 border border-white/20 shadow-2xl">
           <div className="text-center mb-12">
@@ -207,7 +207,7 @@ export default function Home() {
       {/* Services Section */}
       <section
         id="services"
-        className="mt-[300px] w-full max-w-6xl mx-auto px-4 scroll-mt-[200px]"
+        className="mt-[100px] w-full max-w-6xl mx-auto px-4 scroll-mt-[200px]"
       >
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-black text-white mb-6 tracking-tight drop-shadow-2xl">
@@ -284,7 +284,7 @@ export default function Home() {
       {/* Gallery Section */}
       <section
         id="gallery"
-        className="mt-[300px] w-full max-w-6xl mx-auto px-4 scroll-mt-[200px]"
+        className="mt-[100px] w-full max-w-6xl mx-auto px-4 scroll-mt-[200px]"
       >
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-black text-white mb-6 tracking-tight drop-shadow-2xl">
@@ -349,7 +349,7 @@ export default function Home() {
       </section>
 
       {/* 200px space between Gallery and Reviews */}
-      <div style={{ height: '300px' }} />
+  <div style={{ height: '150px' }} />
       
       {/* Customer Reviews Section - Google Reviews */}
       <section
