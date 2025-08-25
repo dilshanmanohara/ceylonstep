@@ -1,13 +1,15 @@
 "use client";
 import { useEffect, useState } from 'react';
+import dayjs from 'dayjs';
 import { supabase } from '../../lib/supabaseClient';
 
 interface Review {
-  name: string;
-  rating: number;
+  id: string;
   created_at: string;
-  content: string;
+  name?: string;
   avatar_url?: string;
+  content: string;
+  source?: string;
 }
 
 export default function SimpleGoogleReviews() {
@@ -19,7 +21,7 @@ export default function SimpleGoogleReviews() {
       setLoading(true);
       const { data, error } = await supabase
         .from('reviews')
-        .select('name, rating, created_at, content, avatar_url')
+        .select('id, created_at, name, avatar_url, content, source')
         .order('created_at', { ascending: false });
       if (!error && data) setReviews(data);
       setLoading(false);
@@ -28,30 +30,12 @@ export default function SimpleGoogleReviews() {
   }, []);
 
   // Calculate overall rating and total reviews
-  const overallRating =
-    reviews.length > 0
-      ? (
-          reviews.reduce((sum, r) => sum + (r.rating || 0), 0) / reviews.length
-        ).toFixed(1)
-      : '5.0';
   const totalReviews = reviews.length;
 
   return (
     <div className="relative w-full flex flex-col items-center justify-center py-12 px-2 bg-gradient-to-br from-yellow-50 via-yellow-100 to-yellow-200 rounded-3xl shadow-2xl border border-yellow-100/60 backdrop-blur-xl">
       {/* Large Rating Card */}
-      <div className="flex flex-col items-center justify-center mb-12 w-full max-w-xl">
-        <div className="bg-white/70 backdrop-blur-lg rounded-3xl shadow-xl border border-yellow-200 px-10 py-8 flex flex-col items-center relative" style={{boxShadow: '0 8px 32px 0 rgba(255, 193, 7, 0.15)'}}>
-          <div className="flex items-center gap-4 mb-2">
-            <span className="text-6xl font-extrabold text-yellow-400 drop-shadow-lg animate-pulse">{overallRating}</span>
-            <div className="flex gap-1">
-              {[1,2,3,4,5].map((star) => (
-                <span key={star} className={`text-3xl transition-all duration-300 ${star <= Math.round(Number(overallRating)) ? 'text-yellow-400 animate-bounce' : 'text-gray-300'}`}>★</span>
-              ))}
-            </div>
-          </div>
-          <div className="text-gray-700 text-lg font-semibold mb-1">Based on {totalReviews} Google reviews</div>
-        </div>
-      </div>
+  {/* No overall rating display since no rating column */}
 
       {/* Reviews Carousel */}
       <div className="relative w-full max-w-6xl px-2 mb-24">
@@ -63,39 +47,39 @@ export default function SimpleGoogleReviews() {
           ) : (
             reviews.map((review, idx) => (
               <div
-                key={idx}
+                key={review.id || idx}
                 className="snap-center min-w-[340px] max-w-xs bg-white/80 backdrop-blur-lg rounded-3xl shadow-2xl p-8 flex flex-col items-center border-2 border-yellow-300 hover:scale-105 hover:shadow-yellow-400/40 transition-transform duration-300 group relative"
                 style={{boxShadow: '0 8px 32px 0 rgba(255, 193, 7, 0.10)'}}
               >
-                <div className="w-20 h-20 rounded-full bg-yellow-100 flex items-center justify-center text-4xl mb-4 border-4 border-white shadow-lg overflow-hidden relative">
-                  {review.avatar_url ? (
+                {/* Avatar or initials if available */}
+                {review.avatar_url ? (
+                  <div className="w-20 h-20 rounded-full bg-yellow-100 flex items-center justify-center text-4xl mb-4 border-4 border-white shadow-lg overflow-hidden relative">
                     <img 
                       src={review.avatar_url} 
-                      alt={review.name}
+                      alt={review.name || 'Avatar'}
                       className="w-full h-full object-cover"
                     />
-                  ) : (
+                    <span className="absolute top-2 right-2 bg-yellow-400 text-white text-xs px-2 py-1 rounded-full font-semibold shadow-lg">Google</span>
+                  </div>
+                ) : (
+                  <div className="w-20 h-20 rounded-full bg-yellow-100 flex items-center justify-center text-4xl mb-4 border-4 border-white shadow-lg overflow-hidden relative">
                     <span className="text-2xl font-bold text-yellow-400 bg-yellow-50 rounded-full w-full h-full flex items-center justify-center uppercase tracking-wide">
-                      {review.name.split(' ').map(n => n[0]).join('').substring(0,2)}
+                      {review.name ? review.name.split(' ').map(n => n[0]).join('').substring(0,2) : 'U'}
                     </span>
-                  )}
-                  <span className="absolute top-2 right-2 bg-yellow-400 text-white text-xs px-2 py-1 rounded-full font-semibold shadow-lg">Google</span>
-                </div>
-                <div className="font-bold text-lg text-gray-900 mb-1 text-center">{review.name}</div>
-                <div className="text-sm text-gray-500 mb-2">{new Date(review.created_at).toLocaleDateString()}</div>
-                <div className="flex gap-1 mb-3">
-                  {[1,2,3,4,5].map(star => (
-                    <span
-                      key={star}
-                      className={`text-lg ${star <= review.rating ? 'text-yellow-400' : 'text-gray-300'}`}
-                    >
-                      ★
-                    </span>
-                  ))}
-                </div>
+                    <span className="absolute top-2 right-2 bg-yellow-400 text-white text-xs px-2 py-1 rounded-full font-semibold shadow-lg">Google</span>
+                  </div>
+                )}
+                {/* Name if available */}
+                {review.name && <div className="font-bold text-lg text-gray-900 mb-1 text-center">{review.name}</div>}
+                {/* Date if available */}
+                {review.created_at && <div className="text-sm text-gray-500 mb-2">{dayjs(review.created_at).format('YYYY-MM-DD')}</div>}
+                {/* No rating display since no rating column */}
+                {/* Content */}
                 <p className="text-gray-700 text-center leading-relaxed text-base font-medium mb-2">
-                  "{review.content.length > 150 ? review.content.substring(0, 150) + '...' : review.content}"
+                  "{review.content && review.content.length > 150 ? review.content.substring(0, 150) + '...' : review.content}"
                 </p>
+                {/* Source if available */}
+                {review.source && <div className="text-xs text-gray-400 mt-2">Source: {review.source}</div>}
               </div>
             ))
           )}
