@@ -322,7 +322,7 @@ export default function Home() {
             className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-sm"
             onClick={() => setLightboxOpen(false)}
           >
-            <div className="relative max-w-4xl max-h-[90vh] p-4">
+            <div className="relative max-w-2xl max-h-[75vh] w-full p-4 flex flex-col items-center justify-center">
               <button
                 onClick={() => setLightboxOpen(false)}
                 className="absolute top-4 right-4 text-white text-4xl hover:text-gray-300 z-10"
@@ -332,7 +332,7 @@ export default function Home() {
               <img
                 src={galleryImages[lightboxIndex]?.image_url}
                 alt={galleryImages[lightboxIndex]?.caption || `Gallery ${lightboxIndex + 1}`}
-                className="max-w-full max-h-full object-contain rounded-lg"
+                className="max-w-[650px] max-h-[65vh] object-contain rounded-lg mx-auto"
               />
               {galleryImages[lightboxIndex]?.caption && (
                 <div className="text-white text-center mt-4 text-lg">
