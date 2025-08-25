@@ -104,7 +104,7 @@ export default function SimpleGoogleReviews() {
 
       {/* Floating Google Reviews Button */}
       <a 
-        href="https://www.google.com/maps/place/CeylonStep/@6.0342737,80.2352276,16.5z/data=!4m6!3m5!1s0x3ae17358e7d0d7af:0xe88e5089feebf85b!8m2!3d6.0352201!4d80.2345827!16s%2Fg%2F11yjcjl9jj?entry=ttu&g_ep=EgoyMDI1MDgxOS4wIKXMDSoASAFQAw%3D%3D" // Replace with your actual Google reviews URL
+        href="https://www.google.com/search?q=CeylonStep&ludocid=13123423423423423423#lrd=0x0:0x0,1" // Replace with your actual Google reviews URL
         target="_blank"
         rel="noopener noreferrer"
         className="fixed bottom-16 right-16 z-50 bg-white hover:bg-yellow-400 text-yellow-500 hover:text-white text-lg font-bold px-8 py-4 rounded-full shadow-2xl border-2 border-yellow-300 transition-all duration-300 flex items-center gap-2 focus:outline-none"

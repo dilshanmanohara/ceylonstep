@@ -5,7 +5,7 @@ import { useState } from "react";
 export default function Header() {
   const [drawerOpen, setDrawerOpen] = useState(false);
   return (
-    <header className="w-full bg-gray-900/95 backdrop-blur-md text-white flex items-center justify-between px-8 py-3 shadow-lg fixed top-0 left-0 z-50 border-b-2 border-yellow-400/50 relative overflow-hidden">
+  <header className="!fixed !top-0 !left-0 !w-full !z-[9999] bg-gray-900/95 backdrop-blur-md text-white flex items-center justify-between px-8 py-3 shadow-lg border-b-2 border-yellow-400/50 relative overflow-hidden">
       {/* Subtle yellow dot SVG pattern background */}
       <div aria-hidden="true" className="absolute inset-0 z-0 opacity-15 pointer-events-none select-none">
         <div className="absolute inset-0" style={{
@@ -54,7 +54,7 @@ export default function Header() {
             onClick={() => setDrawerOpen(false)}
             aria-label="Close navigation menu overlay"
           />
-          <nav className="fixed top-2 right-2 h-[96vh] w-72 bg-gray-900/95 backdrop-blur-2xl shadow-2xl rounded-2xl z-50 flex flex-col p-8 gap-8 animate-slide-in border border-yellow-400/30 relative overflow-hidden" style={{background: 'linear-gradient(135deg, #23272F 0%, #18181b 100%)'}}>
+          <nav className="fixed top-4 right-2 h-[80vh] w-72 bg-transparent shadow-2xl rounded-2xl z-50 flex flex-col p-4 gap-6 animate-slide-in border border-yellow-400/30 relative overflow-hidden">
             {/* Back Arrow for closing drawer */}
             <button
               className="absolute top-4 left-4 z-50 flex items-center gap-2 text-yellow-400 hover:text-yellow-300 text-2xl font-bold focus:outline-none"
