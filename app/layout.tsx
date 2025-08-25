@@ -47,7 +47,7 @@ export default function RootLayout({
         <div aria-hidden="true" className="pointer-events-none select-none absolute left-1/2 top-0 -translate-x-1/2 z-0" style={{width: '60vw', height: '40vh', filter: 'blur(60px)', background: 'radial-gradient(circle, rgba(56,189,248,0.18) 0%, rgba(56,189,248,0.0) 80%)'}} />
         <div className="relative z-10">
           <Header />
-          <div className="pt-0 md:pt-0">
+          <div className="pt-28">
             {children}
           </div>
           <Footer />
