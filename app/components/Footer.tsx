@@ -150,7 +150,7 @@ export default function Footer() {
                 </svg>
                 <div>
                   <p className="text-gray-300 font-medium">Email</p>
-                  <p className="text-gray-400 text-sm">ceylonstepps@gmail.com</p>
+                  <p className="text-gray-400 text-sm">info@ceylonstep.com</p>
                 </div>
               </div>
               <div className="flex items-start gap-3 text-base">
