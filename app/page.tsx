@@ -73,18 +73,17 @@ export default function Home() {
       {/* Hero Carousel Section */}
       <div className="mt-[50px] -mt-[50px] w-full max-w-6xl mx-auto px-4 relative">
         {/* Professional Carousel Container */}
-        <div className="relative overflow-hidden rounded-3xl shadow-2xl border-2 border-white/20">
-          <Slider {...sliderSettings}>
+        <div className="relative overflow-hidden rounded-3xl shadow-2xl border-2 border-white/20 w-full max-w-[600px] aspect-square mx-auto">
+          <Slider {...sliderSettings} className="w-full h-full">
             {albumImages.map((img, idx) => (
-              <div key={idx} className="relative">
+              <div key={idx} className="relative w-full h-full">
                 <img
                   src={img.image_url}
                   alt={img.caption || `Slide ${idx + 1}`}
-                  className="w-full h-[500px] object-cover"
+                  className="w-full h-full object-cover"
                 />
                 {/* Professional Overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
-                
                 {/* Content Overlay */}
                 <div className="absolute bottom-0 left-0 right-0 p-8 text-white">
                   {img.caption && (
@@ -92,9 +91,6 @@ export default function Home() {
                       <h2 className="text-3xl md:text-4xl font-extrabold mb-4 drop-shadow-lg leading-tight">
                         {img.caption}
                       </h2>
-                      <p className="text-lg text-gray-200 mb-6 drop-shadow-md leading-relaxed">
-                        Discover the beauty of Sri Lanka with our premium vehicle rentals
-                      </p>
                     </div>
                   )}
                 </div>
