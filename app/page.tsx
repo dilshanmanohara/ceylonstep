@@ -295,7 +295,7 @@ export default function Home() {
           {galleryImages.map((img, idx) => (
             <div
               key={idx}
-              className="relative group cursor-pointer overflow-hidden rounded-2xl shadow-2xl hover:scale-105 transition-transform duration-300 aspect-[4/3] bg-gray-200"
+              className="relative group cursor-pointer overflow-hidden rounded-2xl shadow-2xl hover:scale-105 transition-transform duration-300"
               onClick={() => {
                 setLightboxIndex(idx);
                 setLightboxOpen(true);
@@ -304,8 +304,7 @@ export default function Home() {
               <img
                 src={img.image_url}
                 alt={img.caption || `Gallery ${idx + 1}`}
-                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
-                style={{ aspectRatio: '4/3' }}
+                className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300"
               />
               <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                 <div className="text-white text-center">
@@ -323,20 +322,20 @@ export default function Home() {
             className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-sm"
             onClick={() => setLightboxOpen(false)}
           >
-            <div className="relative max-w-xl w-full max-h-[80vh] p-2 sm:p-6 flex flex-col items-center justify-center">
+            <div className="relative max-w-4xl max-h-[90vh] p-4">
               <button
                 onClick={() => setLightboxOpen(false)}
-                className="absolute top-2 right-2 sm:top-4 sm:right-4 text-white text-3xl sm:text-4xl hover:text-gray-300 z-10"
+                className="absolute top-4 right-4 text-white text-4xl hover:text-gray-300 z-10"
               >
                 ×
               </button>
               <img
                 src={galleryImages[lightboxIndex]?.image_url}
                 alt={galleryImages[lightboxIndex]?.caption || `Gallery ${lightboxIndex + 1}`}
-                className="max-w-sm sm:max-w-xl max-h-[65vh] object-contain rounded-lg mx-auto"
+                className="max-w-full max-h-full object-contain rounded-lg"
               />
               {galleryImages[lightboxIndex]?.caption && (
-                <div className="text-white text-center mt-4 text-base sm:text-lg">
+                <div className="text-white text-center mt-4 text-lg">
                   {galleryImages[lightboxIndex].caption}
                 </div>
               )}
